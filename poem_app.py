@@ -26,9 +26,6 @@ for target_line, base_line in zip(target_lines,base_lines):
   st.markdown(f":gray[{base_line}]")
 
 
-st.markdown(f"{line1}<br>{line2}",unsafe_allow_html=True )
-
-
 
 st.write("What are the advantages of this method?")
 
