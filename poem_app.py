@@ -18,7 +18,7 @@ base_lines=["Base poem translation",
 
 
 st.title("Let's Learn German!")
-st.markdown(f"{target_lines[0]}<br>:lightgray[{base_lines[0]}]<br>{target_lines[1]}<br>:red[{base_lines[1]}]<br>{target_lines[2]}<br>:red[{base_lines[2]}]<br>{target_lines[3]}<br>:red[{base_lines[3]}]",unsafe_allow_html=True )
+st.markdown(f"{target_lines[0]}<br>:#DCDCDC[{base_lines[0]}]<br>{target_lines[1]}<br>:red[{base_lines[1]}]<br>{target_lines[2]}<br>:red[{base_lines[2]}]<br>{target_lines[3]}<br>:red[{base_lines[3]}]",unsafe_allow_html=True )
 
 
 
