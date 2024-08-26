@@ -16,13 +16,10 @@ base_lines=["Base poem translation",
            "Third line",
            "Fourth line"]
 
-st.markdown(f"{target_lines[0]}<br>:red[{base_lines[0]}]<br>{target_lines[1]}<br>:red[{base_lines[1]}]<br>{target_lines[2]}<br>:red[{base_lines[2]}]<br>{target_lines[3]}<br>:red[{base_lines[3]}]",unsafe_allow_html=True )
 
 st.title("Let's Learn German!")
-#Create a for loop that iterates throught the poems
-for target_line, base_line in zip(target_lines,base_lines):
-  st.markdown(target_line)
-  st.markdown(f":gray[{base_line}]")
+st.markdown(f"{target_lines[0]}<br>:lightgray[{base_lines[0]}]<br>{target_lines[1]}<br>:red[{base_lines[1]}]<br>{target_lines[2]}<br>:red[{base_lines[2]}]<br>{target_lines[3]}<br>:red[{base_lines[3]}]",unsafe_allow_html=True )
+
 
 
 
