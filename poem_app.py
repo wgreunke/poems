@@ -9,10 +9,10 @@ keywords=["knife","Apple","Table"]
 #Base is your current language.
 
 
-def onClickRight()
+def onClickRight():
   st.session_state['page_num'] -= 1
 
-def onClickLeft()
+def onClickLeft():
   st.session_state['page_num'] += 1
 
 
