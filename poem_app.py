@@ -16,6 +16,11 @@ base_lines=["Base poem translation",
            "Second line translate",
            "Third line",
            "Fourth line"]
+line1="sfdsfd"
+line2="hey now"
+
+
+st.markdown(f"{line1}<br>{line2}")
 
 st.title("Let's Learn German!")
 #Create a for loop that iterates throught the poems
