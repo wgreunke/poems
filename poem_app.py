@@ -8,8 +8,6 @@ keywords=["knife","Apple","Table"]
 #Target is the language that you want to learn.
 #Base is your current language.
 
-if 'page_num' not in st.session_state:
-    st.session_state['page_num'] = 0
 
 target_lines=[["This is first line of target",
              "This is second line of target",
@@ -20,19 +18,21 @@ base_lines=["Base poem translation",
            "Second line translate",
            "Third line",
            "Fourth line"]
-
-
 st.title("Let's Learn German!")
+
+if 'page_num' not in st.session_state:
+    st.session_state['page_num'] = 0
+
 st.write(st.session_state['page_num'])
 st.markdown(f"{target_lines[st.session_state['page_num']][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[st.session_state['page_num']][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[st.session_state['page_num']][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[st.session_state['page_num']][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
 #st.markdown(f"{target_lines[1][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[1][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[1][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
 if st.button("Previous Page"):
-  st.session_state['page_num']=st.session_state['page_num']-1
+  st.session_state['page_num']-=1
     
 if st.button("Next Page"):
-  st.session_state['page_num']=st.session_state['page_num']+1
+  st.session_state['page_num']=st.session_state['page_num']+=1
 
 
 st.write(st.session_state['page_num'])
