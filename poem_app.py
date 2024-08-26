@@ -7,20 +7,18 @@ import streamlit as st
 keywords=["knife","Apple","Table"]
 #Target is the language that you want to learn.
 #Base is your current language.
-target_lines=["\nThis is first line of target\n",
+target_lines=["This is first line of target",
              "This is second line of target",
              "This is third line of target",
              "This is fourth line of target",]
-base_lines=["\nBase poem translation\n",
+base_lines=["Base poem translation",
+            
            "Second line translate",
            "Third line",
            "Fourth line"]
 
 st.title("Let's Learn German!")
 #Create a for loop that iterates throught the poems
-temp="surprise"
-st.write(f"temp: :blue[{temp}]")
-st.markdown(":green[temp]")
 for target_line, base_line in zip(target_lines,base_lines):
   st.markdown(target_line)
   st.markdown(f":gray[{base_line}]")
