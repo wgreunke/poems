@@ -16,7 +16,7 @@ base_lines=["Base poem translation",
            "Third line",
            "Fourth line"]
 
-st.markdown(f"{target_lines[0]}<br>:red[{base_lines[0]]}",unsafe_allow_html=True )
+st.markdown(f"{target_lines[0]}<br>:red[{base_lines[0]}]",unsafe_allow_html=True )
 
 st.title("Let's Learn German!")
 #Create a for loop that iterates throught the poems
