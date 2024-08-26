@@ -22,8 +22,9 @@ temp="surprise"
 st.write(f"temp: :blue[{temp}]")
 st.markdown(":green[temp]")
 for target_line, base_line in zip(target_lines,base_lines):
-  st.markdown(":red[target_line]")
-  #st.markdown(:gray[base_line])
+  st.markdown(target_line)
+  #st.markdown(f" base_line: :gray[{base_line}])
+
 
 
 #st.write("This is :blue[test]")
