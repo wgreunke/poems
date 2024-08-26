@@ -36,9 +36,8 @@ st.markdown(f"{target_lines[st.session_state['page_num']][0]}<br>:gray[{base_lin
 
 #st.markdown(f"{target_lines[1][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[1][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[1][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
-st.button("Previous Page",onClickLeft):
-    
-st.button("Next Page",onClickRight):
+st.button("Previous Page",onClickLeft) 
+st.button("Next Page",onClickRight)
 
 
 
