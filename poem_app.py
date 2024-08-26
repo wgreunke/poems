@@ -25,10 +25,6 @@ for target_line, base_line in zip(target_lines,base_lines):
 
 
 
-#st.write("This is :blue[test]")
-st.write(f"**{temp}**",unsafe_allow_html=True, key="green_text")
-
-
 st.write("What are the advantages of this method?")
 
 st.markdown("*Streamlit* is **really** ***cool***.")
