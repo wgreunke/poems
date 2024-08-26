@@ -19,8 +19,8 @@ base_lines=["Base poem translation",
 st.title("Let's Learn German!")
 #Create a for loop that iterates throught the poems
 for target_line, base_line in zip(target_lines,base_lines):
-  st.markdown(:red[target_line])
-  st.markdown(:gray[base_line])
+  st.markdown(":red[target_line]")
+  #st.markdown(:gray[base_line])
 
 
 st.write("This is :blue[test]")
