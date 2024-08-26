@@ -9,6 +9,13 @@ keywords=["knife","Apple","Table"]
 #Base is your current language.
 
 
+def onClickRight()
+  st.session_state['page_num'] -= 1
+
+def onClickLeft()
+  st.session_state['page_num'] += 1
+
+
 target_lines=[["This is first line of target",
              "This is second line of target",
              "This is third line of target",
@@ -20,6 +27,7 @@ base_lines=["Base poem translation",
            "Fourth line"]
 st.title("Let's Learn German!")
 
+#Give the session state an initial value:
 if 'page_num' not in st.session_state:
     st.session_state['page_num'] = 0
 
@@ -28,11 +36,10 @@ st.markdown(f"{target_lines[st.session_state['page_num']][0]}<br>:gray[{base_lin
 
 #st.markdown(f"{target_lines[1][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[1][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[1][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
-if st.button("Previous Page"):
-  st.session_state['page_num'] -= 1
+st.button("Previous Page",onClickLeft):
     
-if st.button("Next Page"):
-  st.session_state['page_num'] += 1
+st.button("Next Page",onClickRight):
+
 
 
 st.write(st.session_state['page_num'])
