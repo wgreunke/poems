@@ -7,11 +7,11 @@ import streamlit as st
 keywords=["knife","Apple","Table"]
 #Target is the language that you want to learn.
 #Base is your current language.
-target_lines=["This is first line of target",
+target_lines=["\nThis is first line of target\n",
              "This is second line of target",
              "This is third line of target",
              "This is fourth line of target",]
-base_lines=["Base poem translation",
+base_lines=["\nBase poem translation\n",
            "Second line translate",
            "Third line",
            "Fourth line"]
