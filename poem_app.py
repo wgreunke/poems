@@ -26,9 +26,12 @@ st.markdown(f"{target_lines[page_num][0]}<br>:gray[{base_lines[0]}]<br>{target_l
 #st.markdown(f"{target_lines[1][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[1][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[1][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
 if st.button("Previous Page"):
-    page_num=page_num-1
+  page_num=page_num-1
 if st.button("Next Page"):
   page_num=page_num+1
+
+
+st.write(page_num)
   
 
 st.write("What are the advantages of this method?")
