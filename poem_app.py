@@ -28,12 +28,13 @@ st.title("Let's Learn German!")
 #st.markdown(f"{target_lines[1][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[1][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[1][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
 if st.button("Previous Page"):
-  st.session_date['page_num']=st.session_state['page_num']-1
+  st.session_state['page_num']=st.session_state['page_num']-1
+    
 if st.button("Next Page"):
-  st.session_date['page_num']=st.session_state['page_num']+1
+  st.session_state['page_num']=st.session_state['page_num']+1
 
 
-st.write(page_num)
+st.write(st.session_state['page_num'])
   
 
 st.write("What are the advantages of this method?")
