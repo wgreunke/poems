@@ -23,7 +23,7 @@ st.write(f"temp: :blue[{temp}]")
 st.markdown(":green[temp]")
 for target_line, base_line in zip(target_lines,base_lines):
   st.markdown(target_line)
-  st.markdown(f" base_line: :gray[{base_line}])
+  st.markdown(f" base_line: :gray[{base_line}]")
 
 
 
