@@ -18,7 +18,7 @@ base_lines=["Base poem translation",
 
 st.title("Let's Learn German!")
 #Create a for loop that iterates throught the poems
-for target_line in zip(target_lines,base_lines):
+for target_line, base_line in zip(target_lines,base_lines):
   st.write(target_line)
   st.write(base_line)
 
