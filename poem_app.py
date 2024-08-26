@@ -5,11 +5,21 @@ import streamlit as st
 
 #This is the core data that will be used for example.
 keywords=["knife","Apple","Table"]
-
-
+#Target is the language that you want to learn.
+#Base is your current language.
+target_lines=["This is first line of target",
+             "This is second line of target",
+             "This is third line of target",
+             "This is fourth line of target",]
+base_lines=["Base poem translation",
+           "Second line translate",
+           "Third line",
+           "Fourth line"]
 
 st.title("Let's Learn German!")
-
+#Create a for loop that iterates throught the poems
+for target_line in targetlines:
+  st.write(target_line)
 
 
 
