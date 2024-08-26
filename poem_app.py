@@ -20,13 +20,15 @@ line1="sfdsfd"
 line2="hey now"
 
 
-st.markdown(f"{line1}<br>{line2}")
 
 st.title("Let's Learn German!")
 #Create a for loop that iterates throught the poems
 for target_line, base_line in zip(target_lines,base_lines):
   st.markdown(target_line)
   st.markdown(f":gray[{base_line}]")
+
+
+st.markdown(f"{line1}<br>{line2}",unsafe_allow_html=True )
 
 
 
