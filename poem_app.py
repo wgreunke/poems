@@ -23,6 +23,7 @@ base_lines=["Base poem translation",
 
 
 st.title("Let's Learn German!")
+st.write(st.session_state['page_num'])
 st.markdown(f"{target_lines[st.session_state['page_num']][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[st.session_state['page_num']][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[st.session_state['page_num']][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[st.session_state['page_num']][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
 #st.markdown(f"{target_lines[1][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[1][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[1][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
