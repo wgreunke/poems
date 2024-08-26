@@ -7,10 +7,11 @@ import streamlit as st
 keywords=["knife","Apple","Table"]
 #Target is the language that you want to learn.
 #Base is your current language.
-target_lines=["This is first line of target",
+target_lines=[["This is first line of target",
              "This is second line of target",
              "This is third line of target",
-             "This is fourth line of target",]
+             "This is fourth line of target",],
+              ["Second poem","sp1","sp2","sp3"]]
 base_lines=["Base poem translation",            
            "Second line translate",
            "Third line",
@@ -18,8 +19,9 @@ base_lines=["Base poem translation",
 
 
 st.title("Let's Learn German!")
-st.markdown(f"{target_lines[0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1]}<br>:gray[{base_lines[1]}]<br>{target_lines[2]}<br>:gray[{base_lines[2]}]<br>{target_lines[3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
+st.markdown(f"{target_lines[0][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[0][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[0][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[0][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
+st.markdown(f"{target_lines[1][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[1][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[1][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
 
 
