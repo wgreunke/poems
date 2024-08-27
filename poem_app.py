@@ -27,7 +27,7 @@ if 'count_value' not in st.session_state:
 #st.write(st.session_state['page_num'])
 st.write("count_value")
 st.write(st.session_state.count_value)
-st.markdown(f"{target_lines[st.session_state.count_value][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[st.session_state['page_num']][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[st.session_state['page_num']][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[st.session_state['page_num']][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
+st.markdown(f"{target_lines[st.session_state.count_value][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[st.session_state.count_value][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[st.session_state.count_value][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[st.session_state.count_value][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
 #st.markdown(f"{target_lines[1][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[1][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[1][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
