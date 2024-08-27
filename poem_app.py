@@ -52,8 +52,8 @@ if l_button:
                    
 #st.button("Previous Page",onClickLeft) 
 #st.button("Next Page",onClickRight)
-if 'count_value' not in st.session_state:
-    st.session_state.count_value = 0
+#if 'count_value' not in st.session_state:
+#    st.session_state.count_value = 0
 
 # Callback functions
 def increment_counter():
