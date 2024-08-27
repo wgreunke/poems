@@ -27,7 +27,11 @@ st.title("Let's Learn German!")
 
 #Give the session state an initial value:
 if 'page_num' not in st.session_state:
-    st.session_state['page_num'] = 0
+  st.session_state['page_num'] = 0
+
+if 'count_value' not in st.session_state:
+    st.session_state.count_value = 0
+
 
 #st.write(st.session_state['page_num'])
 st.write("count_value")
