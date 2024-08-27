@@ -47,6 +47,5 @@ st.write(st.session_state.count_value)
 
 
 
-st.write(st.session_state['page_num'])
   
 
