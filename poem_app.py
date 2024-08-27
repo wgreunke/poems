@@ -11,11 +11,7 @@ keywords=["knife","Apple","Table"]
 
 
 
-if button:
-    st.session_state.counter += 1
 
-if l_button:
-      st.session_state.counter -= 1
 
 
 target_lines=[["This is first line of target",
