@@ -7,13 +7,6 @@ import streamlit as st
 keywords=["knife","Apple","Table"]
 #Target is the language that you want to learn.
 #Base is your current language.
-
-
-
-
-
-
-
 target_lines=[["This is first line of target",
              "This is second line of target",
              "This is third line of target",
@@ -26,8 +19,6 @@ base_lines=["Base poem translation",
 st.title("Let's Learn German!")
 
 #Give the session state an initial value:
-if 'page_num' not in st.session_state:
-  st.session_state['page_num'] = 0
 
 if 'count_value' not in st.session_state:
     st.session_state.count_value = 0
@@ -40,20 +31,7 @@ st.markdown(f"{target_lines[st.session_state.count_value][0]}<br>:gray[{base_lin
 
 #st.markdown(f"{target_lines[1][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[1][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[1][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
-button = st.button('Increment')
-l_button=st.button("Left")
-
-if button:
-    st.session_state['page_num'] += 1
-
-if l_button:
-      st.session_state['page_num'] -= 1
-
                    
-#st.button("Previous Page",onClickLeft) 
-#st.button("Next Page",onClickRight)
-#if 'count_value' not in st.session_state:
-#    st.session_state.count_value = 0
 
 # Callback functions
 def increment_counter():
