@@ -38,10 +38,10 @@ button = st.button('Increment')
 l_button=st.button("Left")
 
 if button:
-    st.session_state.counter += 1
+    st.session_state['page_num'] += 1
 
 if l_button:
-      st.session_state.counter -= 1
+      st.session_state['page_num'] -= 1
 
                    
 #st.button("Previous Page",onClickLeft) 
