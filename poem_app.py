@@ -46,6 +46,19 @@ if l_button:
                    
 #st.button("Previous Page",onClickLeft) 
 #st.button("Next Page",onClickRight)
+if 'count_value' not in st.session_state:
+    st.session_state.count_value = 0
+
+# Callback functions
+def increment_counter():
+    st.session_state.count_value += 1
+   
+def decrement_counter():
+    st.session_state.count_value -= 1
+
+st.button('Increment', on_click=increment_counter, key='increment_btn')
+st.button('Decrement', on_click=decrement_counter, key='decrement_btn')
+st.write(session_state.count_value)
 
 
 
