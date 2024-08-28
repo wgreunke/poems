@@ -21,7 +21,7 @@ base_lines=[["Base poem translation",
             ["a","B","C","D"]]
 
 #Create a dataframe using the lines.
-column_names=['t_lang','b_lang','t_1',t_2','t_3','t_4','b_1','b_2','b_3','b_4']
+column_names=['t_lang','b_lang','t_1','t_2','t_3','t_4','b_1','b_2','b_3','b_4']
 
 row_1=["German","English","This is first line of target",
             "This is second line of target",
