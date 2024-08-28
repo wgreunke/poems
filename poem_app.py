@@ -90,14 +90,14 @@ def decrement_counter():
     st.session_state.lines_row_num -= 1
 
 def increment_counter():
-  if st.session_state.lines_row_num < len(lines_df) + 1:
+  if st.session_state.lines_row_num < len(lines_df):
     st.session_state.lines_row_num += 1
    
-
-st.button('Increment', on_click=increment_counter, key='increment_btn')
-st.button('Decrement', on_click=decrement_counter, key='decrement_btn')
+st.button('Previous Poem', on_click=decrement_counter, key='decrement_btn')
+st.button('Next Poem', on_click=increment_counter, key='increment_btn')
 st.write(st.session_state.lines_row_num)
 
+#Add a rating button, I dont like this because....
 
 
   
