@@ -24,7 +24,10 @@ base_lines=[["Base poem translation",
 column_names=['key_words','t_lang','b_lang','t_1','t_2','t_3','t_4','b_1','b_2','b_3','b_4']
 
 #Create dummy data for the df.
-row_1=["German","English","This is first line of target",
+row_1=["Put keywords here",
+  "German",
+       "English",
+       "This is first line of target",
             "This is second line of target",
             "This is third line of target",
             "This is fourth line of target",
