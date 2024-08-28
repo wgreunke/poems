@@ -64,7 +64,7 @@ if 'lines_row_num' not in st.session_state:
 
 st.title("Let's Learn German!")
 st.write("Keywords for this poem")
-st.write(lines_df.at([st.session_state.lines_row_num,'key_words'])
+st.write(lines_df.at[st.session_state.lines_row_num,'key_words'])
 #st.write(st.session_state.lines_row_num)
 
 #This is the main text output
