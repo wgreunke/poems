@@ -84,11 +84,14 @@ st.write(st.session_state.lines_row_num)
                    
 
 # Callback functions
-def increment_counter():
-    st.session_state.lines_row_num += 1
-   
 def decrement_counter():
+  if st.session_state.lines_row_num < 0; #Dont let the row num get below zero.  Should probably give warning.
     st.session_state.lines_row_num -= 1
+
+def increment_counter():
+  if st.session_state.lines_row_num < len(lines_df) + 1
+  st.session_state.lines_row_num += 1
+   
 
 st.button('Increment', on_click=increment_counter, key='increment_btn')
 st.button('Decrement', on_click=decrement_counter, key='decrement_btn')
