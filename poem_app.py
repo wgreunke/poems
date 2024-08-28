@@ -33,6 +33,7 @@ row_1=["German","English","This is first line of target",
             "Fourth line"]
 lines_df=pd.DataFrame([row_1],columns=column_names)
 st.write(lines_df)
+st.write(lines_df.at[0,"t_1"])
 
 #["Second poem","sp1","sp2","sp3"]]
 
