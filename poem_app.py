@@ -92,7 +92,7 @@ def decrement_counter():
 
 st.button('Increment', on_click=increment_counter, key='increment_btn')
 st.button('Decrement', on_click=decrement_counter, key='decrement_btn')
-st.write(st.session_state.st.session_state.lines_row_num)
+st.write(st.session_state.lines_row_num)
 
 
 
