@@ -38,7 +38,7 @@ row_1=[
   "Fourth line"]
 
 row_2=[
-"Fork, Bed, Table, House"
+"Fork, Bed, Table, House",
 "German",
 "English",
 "Die Gabel liegt auf dem Tisch,",
