@@ -70,7 +70,7 @@ st.write(f"""
 <span style='color: black; font-weight: bold;'>{lines_df.at[st.session_state.lines_row_num,'t_1']}</span><BR>
 <span style='color: lightgray;'>{lines_df.at[st.session_state.lines_row_num,'b_1']}</span><BR>
 <span style='color: black; font-weight: bold;'>{lines_df.at[st.session_state.lines_row_num,'t_2']}</span><BR>
-<span style='color: lightgray;'>{lines_df.at[lines_row_num,'b_2']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[st.session_state.lines_row_num,'b_2']}</span><BR>
 <span style='color: black; font-weight: bold;'>{lines_df.at[st.session_state.lines_row_num,'t_3']}</span><BR>
 <span style='color: lightgray;'>{lines_df.at[st.session_state.lines_row_num,'b_3']}</span><BR>
 <span style='color: black; font-weight: bold;'>{lines_df.at[st.session_state.lines_row_num,'t_4']}</span><BR>
