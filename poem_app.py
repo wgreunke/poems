@@ -47,7 +47,7 @@ row_2=[
 "Unser Zuhause ist daraus.",
 "The fork lies on the table,",
 "The bed stands in my house.",
-"We eat there, we sleep fresh,"
+"We eat there, we sleep fresh,",
 "Our home is made of it."]
   
 
