@@ -57,7 +57,7 @@ st.write(lines_df)
 light_text = "This is the text variable"
 bold_text="This is the bold text"
 
-lines_row_num=0
+lines_row_num=1
 
 st.write(f"""
 <span style='color: black; font-weight: bold;'>{lines_df.at[lines_row_num,'t_1']}</span><BR>
