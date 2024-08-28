@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+#https://easypoems.streamlit.app/
 
 #This is the main streamlit app.  It takes in a set of poems and images and then shows them on the web.
 #A button allows you to advance to the next poem.  #Goal is to get two pages to see how navigation looks.
@@ -17,6 +19,26 @@ base_lines=[["Base poem translation",
            "Third line",
            "Fourth line"],
             ["a","B","C","D"]]
+
+#Create a dataframe using the lines.
+column_names=['t_lang','b_lang','t_1',t_2','t_3','t_4','b_1','b_2','b_3','b_4']
+
+row_1=["German","English","This is first line of target",
+            "This is second line of target",
+            "This is third line of target",
+            "This is fourth line of target",
+            "Base poem translation",           
+            "Second line translate",
+            "Third line",
+            "Fourth line"]
+lines_df=pd.DataFrame([row_1],columns=column_names)
+st.write(lines_df)
+
+#["Second poem","sp1","sp2","sp3"]]
+
+
+
+
 st.title("Let's Learn German!")
 
 #Give the session state an initial value:
