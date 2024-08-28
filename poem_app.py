@@ -60,9 +60,10 @@ st.write(lines_df)
 if 'lines_row_num' not in st.session_state:
     st.session_state.lines_row_num = 0
 
-lines_row_num=1
+#lines_row_num=1
 
 st.title("Let's Learn German!")
+st.write(st.session_state.lines_row_num)
 
 #This is the main text output
 st.write(f"""
