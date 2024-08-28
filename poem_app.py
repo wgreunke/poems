@@ -21,8 +21,9 @@ base_lines=[["Base poem translation",
             ["a","B","C","D"]]
 
 #Create a dataframe using the lines.
-column_names=['t_lang','b_lang','t_1','t_2','t_3','t_4','b_1','b_2','b_3','b_4']
+column_names=['key_words','t_lang','b_lang','t_1','t_2','t_3','t_4','b_1','b_2','b_3','b_4']
 
+#Create dummy data for the df.
 row_1=["German","English","This is first line of target",
             "This is second line of target",
             "This is third line of target",
@@ -31,7 +32,22 @@ row_1=["German","English","This is first line of target",
             "Second line translate",
             "Third line",
             "Fourth line"]
-lines_df=pd.DataFrame([row_1],columns=column_names)
+
+row_2=[
+"Fork, Bed, Table, House"
+"German",
+"English",
+"Die Gabel liegt auf dem Tisch,",
+"Das Bett steht in meinem Haus.",
+"Wir essen dort, wir schlafen frisch,",
+"Unser Zuhause ist daraus.",
+"The fork lies on the table,",
+"The bed stands in my house.",
+"We eat there, we sleep fresh,"
+"Our home is made of it."]
+  
+
+lines_df=pd.DataFrame([row_1,row_2],columns=column_names)
 st.write(lines_df)
 #st.write(lines_df.at[0,"t_1"])
 
