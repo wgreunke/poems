@@ -33,7 +33,7 @@ row_1=["German","English","This is first line of target",
             "Fourth line"]
 lines_df=pd.DataFrame([row_1],columns=column_names)
 st.write(lines_df)
-st.write(lines_df.at[0,"t_1"])
+#st.write(lines_df.at[0,"t_1"])
 
 light_text = "This is the text variable"
 bold_text="This is the bold text"
@@ -41,6 +41,12 @@ bold_text="This is the bold text"
 st.write(f"""
 <span style='color: black; font-weight: bold;'>{lines_df.at[0,'t_1']}</span><BR>
 <span style='color: lightgray;'>{lines_df.at[0,'b_1']}</span>
+<span style='color: black; font-weight: bold;'>{lines_df.at[1,'t_2']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[1,'b_2']}</span>
+<span style='color: black; font-weight: bold;'>{lines_df.at[2,'t_3']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[2,'b_3']}</span>
+<span style='color: black; font-weight: bold;'>{lines_df.at[3,'t_4']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[3,'b_4']}</span>
 
 
 """,unsafe_allow_html=True)
