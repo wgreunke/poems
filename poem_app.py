@@ -90,7 +90,7 @@ def decrement_counter():
 
 def increment_counter():
   if st.session_state.lines_row_num < len(lines_df) + 1:
-  st.session_state.lines_row_num += 1
+    st.session_state.lines_row_num += 1
    
 
 st.button('Increment', on_click=increment_counter, key='increment_btn')
