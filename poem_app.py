@@ -61,7 +61,7 @@ row_2=[
 "The tape is long and wide,",
 "The cat chases the mouse.",
 "The bread is delicious, a treat,",
-"The dog is loyal and noisy."
+"The dog is loyal and noisy."]
 
 
 lines_df=pd.DataFrame([row_1,row_2],columns=column_names)
