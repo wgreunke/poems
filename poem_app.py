@@ -38,15 +38,17 @@ st.write(lines_df)
 light_text = "This is the text variable"
 bold_text="This is the bold text"
 
+lines_row_num=0
+
 st.write(f"""
-<span style='color: black; font-weight: bold;'>{lines_df.at[0,'t_1']}</span><BR>
-<span style='color: lightgray;'>{lines_df.at[0,'b_1']}</span>
-<span style='color: black; font-weight: bold;'>{lines_df.at[1,'t_2']}</span><BR>
-<span style='color: lightgray;'>{lines_df.at[1,'b_2']}</span>
-<span style='color: black; font-weight: bold;'>{lines_df.at[2,'t_3']}</span><BR>
-<span style='color: lightgray;'>{lines_df.at[2,'b_3']}</span>
-<span style='color: black; font-weight: bold;'>{lines_df.at[3,'t_4']}</span><BR>
-<span style='color: lightgray;'>{lines_df.at[3,'b_4']}</span>
+<span style='color: black; font-weight: bold;'>{lines_df.at[lines_row_num,'t_1']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[lines_row_num,'b_1']}</span>
+<span style='color: black; font-weight: bold;'>{lines_df.at[lines_row_num,'t_2']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[lines_row_num,'b_2']}</span>
+<span style='color: black; font-weight: bold;'>{lines_df.at[lines_row_num,'t_3']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[lines_row_num,'b_3']}</span>
+<span style='color: black; font-weight: bold;'>{lines_df.at[lines_row_num,'t_4']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[lines_row_num,'b_4']}</span>
 
 
 """,unsafe_allow_html=True)
