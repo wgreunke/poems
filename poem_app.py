@@ -79,8 +79,8 @@ st.write(f"""
 
         
 
-st.write("count_value")
-st.write(st.session_state.lines_row_num)
+#st.write("count_value")
+#st.write(st.session_state.lines_row_num)
 
                    
 
@@ -93,8 +93,20 @@ def increment_counter():
   if st.session_state.lines_row_num < len(lines_df)-1:
     st.session_state.lines_row_num += 1
    
-st.button('Previous Poem', on_click=decrement_counter, key='decrement_btn')
-st.button('Next Poem', on_click=increment_counter, key='increment_btn')
+
+#Create columns to put the buttons next to eachother
+# Create two columns
+col1, col2 = st.columns(2)
+
+# Add content to the first column
+with col1:
+  st.button('Previous Poem', on_click=decrement_counter, key='decrement_btn')
+
+# Add content to the second column
+with col2:
+  st.button('Next Poem', on_click=increment_counter, key='increment_btn')
+  
+
 st.write(st.session_state.lines_row_num)
 
 #Add a rating button, I dont like this because....
