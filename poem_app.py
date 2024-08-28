@@ -35,6 +35,13 @@ lines_df=pd.DataFrame([row_1],columns=column_names)
 st.write(lines_df)
 st.write(lines_df.at[0,"t_1"])
 
+light_text = "This is the text variable"
+bold_text="This is the bold text"
+
+st.markdown(f"<span style='color: #B0B0B0;'>{text_variable}</span>")
+st.markdown(f"<span style='font-weight: bold; color: #B000000;'>{text_variable}</span>")
+
+
 #["Second poem","sp1","sp2","sp3"]]
 
 
