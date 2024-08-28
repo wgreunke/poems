@@ -79,7 +79,7 @@ st.write(f"""
         
 
 st.write("count_value")
-st.write(st.session_state.count_value)
+st.write(st.session_state.lines_row_num)
 
                    
 
