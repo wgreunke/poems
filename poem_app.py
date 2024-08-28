@@ -38,8 +38,11 @@ st.write(lines_df.at[0,"t_1"])
 light_text = "This is the text variable"
 bold_text="This is the bold text"
 
-st.write(f"""<span style='color: black; font-weight: bold;'>{light_text}</span><BR>
-<span style='color: lightgray; font-weight: bold;'>{bold_text}</span>
+st.write(f"""
+<span style='color: black; font-weight: bold;'>{lines_df.at[0,'t_1']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[0,'b_1']}</span>
+
+
 """,unsafe_allow_html=True)
 
          
