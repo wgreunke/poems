@@ -37,7 +37,7 @@ st.write(lines_df.at[0,"t_1"])
 
 light_text = "This is the text variable"
 bold_text="This is the bold text"
-
+st.markdown(f"<span style='font-weight: bold; color: #B0B0B0;'>{light_text}</span>")
 st.markdown(f"<span style='color: #B0B0B0;'>{light_text}</span>")
 st.markdown(f"<span style='font-weight: bold; color: #B000000;'>{bold_text}</span>")
 
