@@ -85,11 +85,11 @@ st.write(st.session_state.lines_row_num)
 
 # Callback functions
 def decrement_counter():
-  if st.session_state.lines_row_num < 0; #Dont let the row num get below zero.  Should probably give warning.
+  if st.session_state.lines_row_num < 0: #Dont let the row num get below zero.  Should probably give warning.
     st.session_state.lines_row_num -= 1
 
 def increment_counter():
-  if st.session_state.lines_row_num < len(lines_df) + 1
+  if st.session_state.lines_row_num < len(lines_df) + 1:
   st.session_state.lines_row_num += 1
    
 
