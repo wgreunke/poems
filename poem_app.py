@@ -57,48 +57,42 @@ row_2=[
 lines_df=pd.DataFrame([row_1,row_2],columns=column_names)
 st.write(lines_df)
 
-if 'count_value' not in st.session_state:
-    st.session_state.count_value = 0
+if 'lines_row_num' not in st.session_state:
+    st.session_state.lines_row_num = 0
+
 lines_row_num=1
 
 st.title("Let's Learn German!")
 
 #This is the main text output
 st.write(f"""
-<span style='color: black; font-weight: bold;'>{lines_df.at[lines_row_num,'t_1']}</span><BR>
-<span style='color: lightgray;'>{lines_df.at[lines_row_num,'b_1']}</span><BR>
-<span style='color: black; font-weight: bold;'>{lines_df.at[lines_row_num,'t_2']}</span><BR>
+<span style='color: black; font-weight: bold;'>{lines_df.at[st.session_state.lines_row_num,'t_1']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[st.session_state.lines_row_num,'b_1']}</span><BR>
+<span style='color: black; font-weight: bold;'>{lines_df.at[st.session_state.lines_row_num,'t_2']}</span><BR>
 <span style='color: lightgray;'>{lines_df.at[lines_row_num,'b_2']}</span><BR>
-<span style='color: black; font-weight: bold;'>{lines_df.at[lines_row_num,'t_3']}</span><BR>
-<span style='color: lightgray;'>{lines_df.at[lines_row_num,'b_3']}</span><BR>
-<span style='color: black; font-weight: bold;'>{lines_df.at[lines_row_num,'t_4']}</span><BR>
-<span style='color: lightgray;'>{lines_df.at[lines_row_num,'b_4']}</span><BR>
+<span style='color: black; font-weight: bold;'>{lines_df.at[st.session_state.lines_row_num,'t_3']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[st.session_state.lines_row_num,'b_3']}</span><BR>
+<span style='color: black; font-weight: bold;'>{lines_df.at[st.session_state.lines_row_num,'t_4']}</span><BR>
+<span style='color: lightgray;'>{lines_df.at[st.session_state.lines_row_num,'b_4']}</span><BR>
 """,unsafe_allow_html=True)
 
         
-#Give the session state an initial value:
 
-
-
-#st.write(st.session_state['page_num'])
 st.write("count_value")
 st.write(st.session_state.count_value)
-st.markdown(f"{target_lines[st.session_state.count_value][0]}<br>:gray[{base_lines[st.session_state.count_value][0]}]<br>{target_lines[st.session_state.count_value][1]}<br>:gray[{base_lines[st.session_state.count_value][1]}]<br>{target_lines[st.session_state.count_value][2]}<br>:gray[{base_lines[st.session_state.count_value][2]}]<br>{target_lines[st.session_state.count_value][3]}<br>:gray[{base_lines[st.session_state.count_value][3]}]",unsafe_allow_html=True )
-
-#st.markdown(f"{target_lines[1][0]}<br>:gray[{base_lines[0]}]<br>{target_lines[1][1]}<br>:gray[{base_lines[1]}]<br>{target_lines[1][2]}<br>:gray[{base_lines[2]}]<br>{target_lines[1][3]}<br>:gray[{base_lines[3]}]",unsafe_allow_html=True )
 
                    
 
 # Callback functions
 def increment_counter():
-    st.session_state.count_value += 1
+    st.session_state.lines_row_num += 1
    
 def decrement_counter():
-    st.session_state.count_value -= 1
+    st.session_state.lines_row_num -= 1
 
 st.button('Increment', on_click=increment_counter, key='increment_btn')
 st.button('Decrement', on_click=decrement_counter, key='decrement_btn')
-st.write(st.session_state.count_value)
+st.write(st.session_state.st.session_state.lines_row_num)
 
 
 
