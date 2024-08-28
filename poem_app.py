@@ -64,7 +64,7 @@ if 'lines_row_num' not in st.session_state:
 
 st.title("Let's Learn German!")
 st.write("Keywords for this poem")
-st.write("<span style='color: blue; font-weight: bold;'>{lines_df.at[st.session_state.lines_row_num,'key_words']}</span>",unsafe_allow_html=True)
+st.write(f"<span style='color: blue; font-weight: bold;'>{lines_df.at[st.session_state.lines_row_num,'key_words']}</span>",unsafe_allow_html=True)
 #st.write(st.session_state.lines_row_num)
 
 #This is the main text output
