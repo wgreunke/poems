@@ -1,0 +1,5 @@
+base_1,destination_2,title,line_1,line_2
+English,German,Introduction,Welcome to the CSV reader app!,This is the first example line.
+English,German,Chapter 1,Here we go with the first chapter.,Line 2 is always in grey.
+English,German,Chapter 2,We are now in the second chapter.,You can keep going with "Next".
+English,German,Conclusion,That's the end of the file.,Feel free to go back with "Previous".
