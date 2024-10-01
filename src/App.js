@@ -4,54 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse'; // For parsing CSV files
 
 
-// DataDisplay component to show the title, line 1, and line 2
-const DataDisplay = ({ key_words, line1, line2 }) => {
-  return (
-    <div>
-      <h1>{key_words}</h1>
-      <p>{line1}</p>
-      <p style={{ color: 'grey' }}>{line2}</p>
-    </div>
-  );
-};
-
-
-const DisplayPoem = ({ poem_data, currentIndex }) => {
-  return (
-    <div>
-      <h1>{poem_data[currentIndex].key_words}</h1>
-      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_1}</p>
-      <p style={{ color: 'grey', margin:0, padding:0}}>{poem_data[currentIndex].base_1}</p>
-      <br></br>
-      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_2}</p>
-      <p style={{ color: 'grey', margin:0, padding:0}}>{poem_data[currentIndex].base_2}</p>
-      <br></br>
-      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_3}</p>
-      <p style={{ color: 'grey', margin:0, padding:0}}>{poem_data[currentIndex].base_3}</p>
-      <br></br>
-      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_4}</p>
-      <p style={{ color: 'grey', margin:0, padding:0}}>{poem_data[currentIndex].base_4}</p>
-      <br></br>      
-      <img style={{height:200, width:200}}  src={`/images/${poem_data[currentIndex].image_name}`} alt="Poem Illustration" />
-
-
-    </div>
-  );
-};
-
-
-
-
-// NavigationButtons component with Next and Previous buttons
-const NavigationButtons = ({ onNext, onPrevious }) => {
-  return (
-    <div>
-      <button onClick={onPrevious}>Previous</button>
-      <button onClick={onNext}>Next</button>
-    </div>
-  );
-};
-
 // LoadData component for loading JSON data and setting the state
 const LoadLocalData = ({ setData }) => {
   useEffect(() => {
@@ -94,6 +46,40 @@ const LoadLocalData = ({ setData }) => {
   return null; // This component doesn't render anything
 };
 
+const DisplayPoem = ({ poem_data, currentIndex }) => {
+  return (
+    <div>
+      <h1>{poem_data[currentIndex].key_words}</h1>
+      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_1}</p>
+      <p style={{ color: 'grey', margin:0, padding:0}}>{poem_data[currentIndex].base_1}</p>
+      <br></br>
+      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_2}</p>
+      <p style={{ color: 'grey', margin:0, padding:0}}>{poem_data[currentIndex].base_2}</p>
+      <br></br>
+      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_3}</p>
+      <p style={{ color: 'grey', margin:0, padding:0}}>{poem_data[currentIndex].base_3}</p>
+      <br></br>
+      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_4}</p>
+      <p style={{ color: 'grey', margin:0, padding:0}}>{poem_data[currentIndex].base_4}</p>
+      <br></br>      
+      <img style={{height:200, width:200}}  src={`./poems/images/${poem_data[currentIndex].image_name}`} alt="Poem Illustration" />
+
+
+    </div>
+  );
+};
+
+
+// NavigationButtons component with Next and Previous buttons
+const NavigationButtons = ({ onNext, onPrevious }) => {
+  return (
+    <div>
+      <button onClick={onPrevious}>Previous</button>
+      <button onClick={onNext}>Next</button>
+    </div>
+  );
+};
+
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [data, setData] = useState([]); // Initially empty
@@ -125,12 +111,6 @@ function App() {
           {/* Navigation buttons */}
           <NavigationButtons onNext={handleNext} onPrevious={handlePrevious} />
           <br></br>
-
-          <img style={{height:200, width:200}} src="/images/cup-mouse-pen.jpg" />
-          <p>github in front</p>
-          <img style={{height:200, width:200}} src="./poems/images/cup-mouse-pen.jpg" />
-          <p>./</p>
-          <img style={{height:200, width:200}} src="./images/cup-mouse-pen.jpg" />
 
           <a href="https://www.linkedin.com/in/wgreunke/" alt=""> Written by Ward Greunke</a>
         </div>
