@@ -127,6 +127,11 @@ function App() {
           <br></br>
 
           <img style={{height:200, width:200}} src="/images/cup-mouse-pen.jpg" />
+          <p>github in front</p>
+          <img style={{height:200, width:200}} src="./poems/images/cup-mouse-pen.jpg" />
+          <p>./</p>
+          <img style={{height:200, width:200}} src="./images/cup-mouse-pen.jpg" />
+
           <a href="https://www.linkedin.com/in/wgreunke/" alt=""> Written by Ward Greunke</a>
         </div>
       )}
