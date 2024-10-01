@@ -113,25 +113,21 @@ function App() {
 
   return (
     <div>
-      <h1>Simple German Poems</h1>
+      <h1 style={{margin:30}}>Simple German Poems</h1>
 
       {/* Load JSON data on start */}
       <LoadLocalData setData={setData} />
 
       {/* Display data if available */}
       {data.length > 0 && (
-        <div>
-          <DataDisplay
-            key_words={data[currentIndex].key_words} // Access 'title' from JSON data
-            line1={data[currentIndex].target_1} // Access 'line_1' from JSON data
-            line2={data[currentIndex].base_1} // Access 'line_2' from JSON data
-          />
-
+        <div style={{margin:30}}>
           <DisplayPoem poem_data={data} currentIndex={currentIndex} />
           {/* Navigation buttons */}
           <NavigationButtons onNext={handleNext} onPrevious={handlePrevious} />
           <br></br>
-          <a href="https://www.linkedin.com/in/wgreunke/"> Written by Ward Greunke</a>
+
+          <img style={{height:200, width:200}} src="/images/cup-mouse-pen.jpg" />
+          <a href="https://www.linkedin.com/in/wgreunke/" alt=""> Written by Ward Greunke</a>
         </div>
       )}
     </div>
