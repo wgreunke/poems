@@ -62,6 +62,8 @@ const DisplayPoem = ({ poem_data, currentIndex }) => {
       <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_4}</p>
       <p style={{ color: 'grey', margin:0, padding:0}}>{poem_data[currentIndex].base_4}</p>
       <br></br>      
+      <img style={{height:200, width:200}}  src={`./images/${poem_data[currentIndex].image_name}`} alt="Poem Illustration" />
+      <br></br>
       <img style={{height:200, width:200}}  src={`./poems/images/${poem_data[currentIndex].image_name}`} alt="Poem Illustration" />
 
 
