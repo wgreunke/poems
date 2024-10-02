@@ -21,7 +21,6 @@ const LoadLocalData = ({ setData }) => {
         base_2: "there sits a little mouse in the hat.",
         base_3: "With a pen writes she fast,",
         base_4: "the words dance, oh how bright."
-
       },
       {
         key_words: "Cat, House, Shoe",
@@ -49,7 +48,6 @@ const LoadLocalData = ({ setData }) => {
         base_3: "Colors radiate, the wind blows swiftly,",
         base_4: "Joy and happiness, we always win."
       },
-
       {
         key_words: "End",
         poem_lines: 4,
@@ -63,9 +61,7 @@ const LoadLocalData = ({ setData }) => {
         base_3: "",
         base_4: ""
       },
-
-
-      // Add more items as needed
+      
     ];
 
     // Set the data into state
@@ -75,9 +71,36 @@ const LoadLocalData = ({ setData }) => {
   return null; // This component doesn't render anything
 };
 
-const DisplayPoem = ({ poem_data, currentIndex,showBase }) => {
+const LanguageChooser=({setChosenLanguage})=>{
+
+const [selectedLanguage,setSelectedLanguage]=useState('German');
+
+  const handleLanguageChange=(event)=>{
+    setSelectedLanguage(event.target.value);
+    setChosenLanguage(event.target.value)
+  };
+
+  return(
+  //Dropdown for the given languages
+    <div>
+    Choose a language to learn
+    <select 
+    id="language-select"
+    value={selectedLanguage}
+    onChange={handleLanguageChange}
+    >
+    <option value="German">German</option>
+    <option value="Spanish">Spanish</option>
+    </select>
+
+</div>
+  );
+}
+
+const DisplayPoem = ({ poem_data, currentIndex,showBase, chosenLanguage }) => {
   return (
     <div>
+      <p>You are studying: {chosenLanguage}</p>
       <h1>{poem_data[currentIndex].key_words}</h1>
       <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_1}</p>
       
@@ -125,9 +148,9 @@ const ToggleSwitch=({handleToggle, showBase})=>{
 const NavigationButtons = ({ onNext, onPrevious }) => {
   return (
     <div>
-      <button onClick={onPrevious} style={{ fontSize: '1.5rem', padding: '10px 20px', borderRadius: '8px', width:'130px',marginRight:'8px' }} >
+      <button onClick={onPrevious} style={{ fontSize: '1.4rem', padding: '10px 20px', borderRadius: '8px', width:'120px',marginRight:'8px' }} >
         Previous</button>
-      <button onClick={onNext} style={{ fontSize: '1.5rem',padding: '10px 20px',  borderRadius: '8px',width:'130px' }}>
+      <button onClick={onNext} style={{ fontSize: '1.4rem',padding: '10px 20px',  borderRadius: '8px',width:'120px' }}>
         Next</button>
     </div>
   );
@@ -137,9 +160,15 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [data, setData] = useState([]); // Initially empty
 
+//ChosenLanguage
+const [chosenLanguage, setChosenLanguage] = useState('German');
+
+
 //Toggle Functions
 const [showBase, setShowBase] = useState(false);
 const handleToggle=()=> {setShowBase(!showBase);};
+
+
 
 
   // Functions to handle next and previous buttons
@@ -161,6 +190,7 @@ const handleToggle=()=> {setShowBase(!showBase);};
 // ******************* App Return *********************************
   return (
     <div>
+      <LanguageChooser setChosenLanguage={setChosenLanguage} />
       <h1 style={{margin:30}}>Simple German Poems</h1>
 
       {/* Load JSON data on start */}
@@ -169,7 +199,8 @@ const handleToggle=()=> {setShowBase(!showBase);};
       {/* Display data if available */}
       {data.length > 0 && (
         <div style={{margin:30}}>
-          <DisplayPoem poem_data={data} currentIndex={currentIndex} showBase={showBase} />
+          <DisplayPoem poem_data={data} currentIndex={currentIndex} showBase={showBase} chosenLanguage={chosenLanguage} />
+          
           {/* Navigation buttons */}
           <ToggleSwitch handleToggle={handleToggle} showBase={showBase} />
           <br></br>
