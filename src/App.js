@@ -86,7 +86,7 @@ const DisplayPoem = ({ poem_data, currentIndex,showBase }) => {
       <br></br>
       <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_2}</p>
       <p style={{ color: 'grey', margin:0, padding:0}}>
-        {showBase ? poem_data[currentIndex].base_1 :'.'}</p>
+        {showBase ? poem_data[currentIndex].base_2 :'.'}</p>
       <br></br>
       <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_3}</p>
       <p style={{ color: 'grey', margin:0, padding:0}}>
