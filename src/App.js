@@ -109,15 +109,14 @@ const DisplayPoem = ({ poem_data, currentIndex,showBase }) => {
 //Add a toggle to hide the english
 const ToggleSwitch=({handleToggle, showBase})=>{
   return (
-    <>
+    <div>
     <label>
-    Show English? 
+    Show English?  
     <input type="checkbox" checked={showBase} onChange={handleToggle} 
-    style={{ transform: 'scale(1.5)', marginRight: '8px' }}
+    style={{ transform: 'scale(1.5)', marginLeft:'10px', marginRight: '8px' }}
     />
-    
       </label>
-      </>
+      </div>
   );
 };
 
@@ -126,9 +125,9 @@ const ToggleSwitch=({handleToggle, showBase})=>{
 const NavigationButtons = ({ onNext, onPrevious }) => {
   return (
     <div>
-      <button onClick={onPrevious} style={{ fontSize: '1.5rem', padding: '10px 20px', borderRadius: '8px' }} >
+      <button onClick={onPrevious} style={{ fontSize: '1.5rem', padding: '10px 20px', borderRadius: '8px', width:'130px',marginRight:'8px' }} >
         Previous</button>
-      <button onClick={onNext} style={{ fontSize: '1.5rem', padding: '10px 20px', borderRadius: '8px' }}>
+      <button onClick={onNext} style={{ fontSize: '1.5rem',padding: '10px 20px',  borderRadius: '8px',width:'130px' }}>
         Next</button>
     </div>
   );
