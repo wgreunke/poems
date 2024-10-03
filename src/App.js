@@ -5,11 +5,26 @@ import Papa from 'papaparse'; // For parsing CSV files
 
 
 // LoadData component for loading JSON data and setting the state
-const LoadLocalData = ({ setData }) => {
+const LoadLocalData = ({ setData, chosenLanguage }) => {
   useEffect(() => {
     // Define the data as JSON
     const jsonData = [
       {
+        target_language:"Spanish",
+        key_words: "Cup, Mouse, Pen",
+        poem_lines: 4,
+        image_name:"cup-mouse-pen.jpg",
+        target_1: "Habla Espanol",
+        target_2:"da sitzt eine kleine Maus in der Hasse.",
+        target_3: "Mit einem Stift schreibt sie schnell,",
+        target_4:"die Worte tanzen, oh wie hell.",
+        base_1: "This is Spanish,",
+        base_2: "there sits a little mouse in the hat.",
+        base_3: "With a pen writes she fast,",
+        base_4: "the words dance, oh how bright."
+      },
+      {
+        target_language:"German",
         key_words: "Cup, Mouse, Pen",
         poem_lines: 4,
         image_name:"cup-mouse-pen.jpg",
@@ -23,6 +38,7 @@ const LoadLocalData = ({ setData }) => {
         base_4: "the words dance, oh how bright."
       },
       {
+        target_language:"German",
         key_words: "Cat, House, Shoe",
         poem_lines: 4,
         image_name:"cat-shoe-house.jpg",
@@ -36,6 +52,7 @@ const LoadLocalData = ({ setData }) => {
         base_4: "and purrs quietly always."
       },
       {
+        target_language:"German",
         key_words: "Garten, Blumen, Luck ",
         poem_lines: 4,
         image_name:"garden.jpg",
@@ -49,6 +66,7 @@ const LoadLocalData = ({ setData }) => {
         base_4: "Joy and happiness, we always win."
       },
       {
+        target_language:"German",
         key_words: "End",
         poem_lines: 4,
         image_name:"",
@@ -64,9 +82,18 @@ const LoadLocalData = ({ setData }) => {
       
     ];
 
+    const filteredData = jsonData.filter(
+      (item) => item.target_language.toLowerCase() === chosenLanguage.toLowerCase()
+    );
+
+    // Set the filtered data into state
+    setData(filteredData);
+
+
     // Set the data into state
-    setData(jsonData);
-  }, [setData]);
+    setData(filteredData);
+    //setData(jsonData);
+  }, [setData,chosenLanguage]);
 
   return null; // This component doesn't render anything
 };
@@ -164,11 +191,9 @@ function App() {
 const [chosenLanguage, setChosenLanguage] = useState('German');
 
 
-//Toggle Functions
+//Decide to show the base language
 const [showBase, setShowBase] = useState(false);
 const handleToggle=()=> {setShowBase(!showBase);};
-
-
 
 
   // Functions to handle next and previous buttons
@@ -194,7 +219,7 @@ const handleToggle=()=> {setShowBase(!showBase);};
       <h1 style={{margin:30}}>Simple German Poems</h1>
 
       {/* Load JSON data on start */}
-      <LoadLocalData setData={setData} />
+      <LoadLocalData setData={setData} chosenLanguage={chosenLanguage} />
 
       {/* Display data if available */}
       {data.length > 0 && (
