@@ -98,13 +98,14 @@ const LoadLocalData = ({ setData, chosenLanguage }) => {
   return null; // This component doesn't render anything
 };
 
-const LanguageChooser=({setChosenLanguage})=>{
+const LanguageChooser=({setChosenLanguage,setCurrentIndex})=>{
 
-const [selectedLanguage,setSelectedLanguage]=useState('German');
+  const [selectedLanguage,setSelectedLanguage]=useState('German');
 
   const handleLanguageChange=(event)=>{
     setSelectedLanguage(event.target.value);
-    setChosenLanguage(event.target.value)
+    setChosenLanguage(event.target.value);
+    setCurrentIndex(0);
   };
 
   return(
@@ -215,8 +216,9 @@ const handleToggle=()=> {setShowBase(!showBase);};
 // ******************* App Return *********************************
   return (
     <div>
-      <LanguageChooser setChosenLanguage={setChosenLanguage} />
-      <h1 style={{margin:30}}>Simple German Poems</h1>
+      <LanguageChooser setChosenLanguage={setChosenLanguage} setCurrentIndex={setCurrentIndex} />
+
+      <h1 style={{margin:30}}>Simple German Poems </h1>
 
       {/* Load JSON data on start */}
       <LoadLocalData setData={setData} chosenLanguage={chosenLanguage} />
