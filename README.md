@@ -1,3 +1,10 @@
+# Setup that needs to happen
+1. For CSV reader, npm install papaparse for the csv file data loader.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
