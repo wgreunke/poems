@@ -129,9 +129,9 @@ const ToggleSwitch=({handleToggle, showBase})=>{
 const NavigationButtons = ({ onNext, onPrevious }) => {
   return (
     <div>
-      <button onClick={onPrevious} style={{ fontSize: '1rem', padding: '5px', borderRadius: '8px', width:'120px',marginRight:'8px'}} >
+      <button onClick={onPrevious} style={{ fontSize: '1rem', padding: '5px', borderRadius: '8px', width:'80px',marginRight:'8px'}} >
         Previous</button>
-      <button onClick={onNext} style={{ fontSize: '1rem',padding: '5px',  borderRadius: '8px',width:'120px' }}>
+      <button onClick={onNext} style={{ fontSize: '1rem',padding: '5px',  borderRadius: '8px',width:'80px' }}>
         Next</button>
     </div>
   );
@@ -180,7 +180,7 @@ const handleToggle=()=> {setShowBase(!showBase);};
     
       {/* Display data if available */}
       {data.length > 0 && (
-        <div style={{margin:30}}>
+        <div style={{margin:'10px'}}>
           <LanguageChooser setChosenLanguage={setChosenLanguage} setCurrentIndex={setCurrentIndex} />
           <DisplayPoem poem_data={data} currentIndex={currentIndex} showBase={showBase} chosenLanguage={chosenLanguage} />
           {/* Navigation buttons */}
