@@ -53,10 +53,6 @@ const LoadLocalData = ({ setData, chosenLanguage }) => {
   return null; // This component doesn't render anything
 };
 
-
-
-
-
 const LanguageChooser=({setChosenLanguage,setCurrentIndex})=>{
   const [selectedLanguage,setSelectedLanguage]=useState('German');
   const handleLanguageChange=(event)=>{
@@ -173,7 +169,7 @@ const handleToggle=()=> {setShowBase(!showBase);};
 
 // ******************* App Return *********************************
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
     <Container maxWidth="md"> {/* Adjust maxWidth as needed */}
      
       
