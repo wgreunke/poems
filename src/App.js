@@ -67,26 +67,21 @@ const LanguageChooser=({setChosenLanguage,setCurrentIndex})=>{
 
   return(
   //Dropdown for the given languages
-    <Box sx={{minWidth:100}}>
-    <FormControl>
-    <InputLabel id="language-select">Language</InputLabel>
-    <Select 
-    labelId="language-select"
+    <div>
+    <select 
     id="language-select"
     value={selectedLanguage}
-    label="Language"
     onChange={handleLanguageChange}
-    PaperProps={{
-      style: { maxHeight: '20px' }, // Adjust the height as needed
-    }}
+    style={{ width: '100px', padding: '4px', fontSize: '12px' }}
     >
-    <MenuItem value="German">German</MenuItem>
-    <MenuItem value="Spanish">Spanish</MenuItem>
-    </Select>
-    </FormControl>
-    </Box>
+    <option value="German">German</option>
+    <option value="Spanish">Spanish</option>
+    </select>
+    </div>
+
   );
 }
+
 
 const DisplayPoem = ({ poem_data, currentIndex,showBase, chosenLanguage }) => {
   return (
@@ -198,7 +193,7 @@ const handleToggle=()=> {setShowBase(!showBase);};
           <NavigationButtons onNext={handleNext} onPrevious={handlePrevious} />
     
           <br style={{height:'3px'}}></br>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6BFc00n1gch93HZzOI5WN4LjfIw4lrOaMZmGFYfEYWND4Ug/viewform?usp=sf_link" alt="">Share a poem or leave feedbac</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6BFc00n1gch93HZzOI5WN4LjfIw4lrOaMZmGFYfEYWND4Ug/viewform?usp=sf_link" alt="">Share a poem or leave feedback</a>
           <br></br>     
           <a href="https://www.linkedin.com/in/wgreunke/" alt=""> Written by Ward Greunke</a>
         </div>
