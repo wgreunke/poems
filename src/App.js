@@ -113,7 +113,7 @@ const DisplayPoem = ({ poem_data, currentIndex,showBase, chosenLanguage }) => {
 //Add a toggle to hide the english
 const ToggleSwitch=({handleToggle, showBase})=>{
   return (
-    <div>
+    <div style={{margin:'5px'}}>
     <label>
     Show English?  
     <input type="checkbox" checked={showBase} onChange={handleToggle} 
@@ -128,7 +128,7 @@ const ToggleSwitch=({handleToggle, showBase})=>{
 // NavigationButtons component with Next and Previous buttons
 const NavigationButtons = ({ onNext, onPrevious }) => {
   return (
-    <div>
+    <div style={{margin:'5px'}}>
       <button onClick={onPrevious} style={{ fontSize: '1rem', padding: '5px', borderRadius: '8px', width:'80px',marginRight:'8px'}} >
         Previous</button>
       <button onClick={onNext} style={{ fontSize: '1rem',padding: '5px',  borderRadius: '8px',width:'80px' }}>
@@ -185,10 +185,8 @@ const handleToggle=()=> {setShowBase(!showBase);};
           <DisplayPoem poem_data={data} currentIndex={currentIndex} showBase={showBase} chosenLanguage={chosenLanguage} />
           {/* Navigation buttons */}
           <ToggleSwitch handleToggle={handleToggle} showBase={showBase} />
-          <br></br>
           <NavigationButtons onNext={handleNext} onPrevious={handlePrevious} />
     
-          <br style={{height:'3px'}}></br>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6BFc00n1gch93HZzOI5WN4LjfIw4lrOaMZmGFYfEYWND4Ug/viewform?usp=sf_link" alt="">Share a poem or leave feedback</a>
           <br></br>     
           <a href="https://www.linkedin.com/in/wgreunke/" alt=""> Written by Ward Greunke</a>
