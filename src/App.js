@@ -2,11 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse'; // For parsing CSV files
+import { Box, Container, InputLabel, MenuItem } from '@mui/material';
+
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 //Data loader goes here:
-
-
-
 const LoadLocalData = ({ setData, chosenLanguage }) => {
   useEffect(() => {
     // Ensure chosenLanguage is valid before proceeding
@@ -57,9 +58,7 @@ const LoadLocalData = ({ setData, chosenLanguage }) => {
 
 
 const LanguageChooser=({setChosenLanguage,setCurrentIndex})=>{
-
   const [selectedLanguage,setSelectedLanguage]=useState('German');
-
   const handleLanguageChange=(event)=>{
     setSelectedLanguage(event.target.value);
     setChosenLanguage(event.target.value);
@@ -68,44 +67,50 @@ const LanguageChooser=({setChosenLanguage,setCurrentIndex})=>{
 
   return(
   //Dropdown for the given languages
-    <div>
-    <select 
+    <Box sx={{minWidth:100}}>
+    <FormControl>
+    <InputLabel id="language-select">Language</InputLabel>
+    <Select 
+    labelId="language-select"
     id="language-select"
     value={selectedLanguage}
+    label="Language"
     onChange={handleLanguageChange}
-    style={{ width: '100px', padding: '8px', fontSize: '16px' }}
+    PaperProps={{
+      style: { maxHeight: '20px' }, // Adjust the height as needed
+    }}
     >
-    <option value="German">German</option>
-    <option value="Spanish">Spanish</option>
-    </select>
-
-</div>
+    <MenuItem value="German">German</MenuItem>
+    <MenuItem value="Spanish">Spanish</MenuItem>
+    </Select>
+    </FormControl>
+    </Box>
   );
 }
 
 const DisplayPoem = ({ poem_data, currentIndex,showBase, chosenLanguage }) => {
   return (
     <div>
-      <p>You are studying: {chosenLanguage}</p>
-      <h1>{poem_data[currentIndex].key_words}</h1>
-      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_line1}</p>
+      <h1 style={{color:'blue',fontSize:'16px' }}>{poem_data[currentIndex].key_words}</h1>
       
-      <p style={{ color: 'grey', margin:0, padding:0}}>
-        {showBase ? poem_data[currentIndex].base_line1  :'.'}</p>
-      <br></br>
+
+      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_line1}</p>
+      <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
+        {showBase ? poem_data[currentIndex].base_line1 :'.'}</p>
+       
       <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_line2}</p>
-      <p style={{ color: 'grey', margin:0, padding:0}}>
+      <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
         {showBase ? poem_data[currentIndex].base_line2 :'.'}</p>
-      <br></br>
+      
+      
       <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_line3}</p>
-      <p style={{ color: 'grey', margin:0, padding:0}}>
+      <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
       {showBase ? poem_data[currentIndex].base_line3 :'.'}</p>
-      <br></br>
       <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_line4}</p>
-      <p style={{ color: 'grey', margin:0, padding:0}}>
+      <p style={{color: showBase ? 'grey':'white', margin:0, padding:0}}>
       {showBase ? poem_data[currentIndex].base_line4 :'.'}</p>
-      <br></br>      
-      <img style={{height:200, width:200}}  src={`./images/${poem_data[currentIndex].image_name}`} alt="Poem Illustration" />
+      <br style={{height:'3px'}}></br>
+      <img style={{height:150, width:150}}  src={`./images/${poem_data[currentIndex].image_name}`} alt="Poem Illustration" />
       <br></br>
       <img style={{height:10, width:10}}  src={`./poems/images/${poem_data[currentIndex].image_name}`} alt="" />
 
@@ -133,14 +138,15 @@ const ToggleSwitch=({handleToggle, showBase})=>{
 const NavigationButtons = ({ onNext, onPrevious }) => {
   return (
     <div>
-      <button onClick={onPrevious} style={{ fontSize: '1.4rem', padding: '10px 20px', borderRadius: '8px', width:'120px',marginRight:'8px' }} >
+      <button onClick={onPrevious} style={{ fontSize: '1rem', padding: '5px', borderRadius: '8px', width:'120px',marginRight:'8px'}} >
         Previous</button>
-      <button onClick={onNext} style={{ fontSize: '1.4rem',padding: '10px 20px',  borderRadius: '8px',width:'120px' }}>
+      <button onClick={onNext} style={{ fontSize: '1rem',padding: '5px',  borderRadius: '8px',width:'120px' }}>
         Next</button>
     </div>
   );
 };
 
+//************************** Main Function ************************/
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [data, setData] = useState([]); // Initially empty
@@ -172,9 +178,10 @@ const handleToggle=()=> {setShowBase(!showBase);};
 
 // ******************* App Return *********************************
   return (
-    <div>
-      <LanguageChooser setChosenLanguage={setChosenLanguage} setCurrentIndex={setCurrentIndex} />
-
+    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <Container maxWidth="md"> {/* Adjust maxWidth as needed */}
+     
+      
       {/*  Need a header <h1 style={{margin:30}}>Simple German Poems </h1> */}
       
       {/* Load JSON data on start */}
@@ -183,17 +190,21 @@ const handleToggle=()=> {setShowBase(!showBase);};
       {/* Display data if available */}
       {data.length > 0 && (
         <div style={{margin:30}}>
+          <LanguageChooser setChosenLanguage={setChosenLanguage} setCurrentIndex={setCurrentIndex} />
           <DisplayPoem poem_data={data} currentIndex={currentIndex} showBase={showBase} chosenLanguage={chosenLanguage} />
           {/* Navigation buttons */}
           <ToggleSwitch handleToggle={handleToggle} showBase={showBase} />
           <br></br>
           <NavigationButtons onNext={handleNext} onPrevious={handlePrevious} />
-          <br></br>
-          <br></br>
+    
+          <br style={{height:'3px'}}></br>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6BFc00n1gch93HZzOI5WN4LjfIw4lrOaMZmGFYfEYWND4Ug/viewform?usp=sf_link" alt="">Share a poem or leave feedbac</a>
+          <br></br>     
           <a href="https://www.linkedin.com/in/wgreunke/" alt=""> Written by Ward Greunke</a>
         </div>
       )}
-    </div>
+    </Container>
+    </Box>
   );
 }
 
