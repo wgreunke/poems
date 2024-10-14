@@ -79,31 +79,32 @@ const LanguageChooser=({setChosenLanguage,setCurrentIndex})=>{
 }
 
 
-const DisplayPoem = ({ poem_data, currentIndex,showBase, chosenLanguage }) => {
+const DisplayPoem = ({ poem_data, currentIndex,showBase }) => {
+  //const poem=poem_data[currentIndex];
   return (
     <div>
-      <h1 style={{color:'blue',fontSize:'16px' }}>{poem_data[currentIndex].key_words}</h1>
+      {/*<h1 style={{color:'blue',fontSize:'16px' }}>{poem_data.key_words}</h1> */}
       
 
-      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_line1}</p>
+      <p style={{margin:0, padding:0}}>{poem_data.target_line1}</p>
       <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
         {showBase ? poem_data[currentIndex].base_line1 :'.'}</p>
        
-      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_line2}</p>
+      <p style={{margin:0, padding:0}}>{poem_data.target_line2}</p>
       <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
         {showBase ? poem_data[currentIndex].base_line2 :'.'}</p>
       
       
-      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_line3}</p>
+      <p style={{margin:0, padding:0}}>{poem_data.target_line3}</p>
       <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
       {showBase ? poem_data[currentIndex].base_line3 :'.'}</p>
-      <p style={{margin:0, padding:0}}>{poem_data[currentIndex].target_line4}</p>
+      <p style={{margin:0, padding:0}}>{poem_data.target_line4}</p>
       <p style={{color: showBase ? 'grey':'white', margin:0, padding:0}}>
-      {showBase ? poem_data[currentIndex].base_line4 :'.'}</p>
+      {showBase ? poem_data.base_line4 :'.'}</p>
       <br style={{height:'3px'}}></br>
-      <img style={{height:150, width:150}}  src={`./images/${poem_data[currentIndex].image_name}`} alt="Poem Illustration" />
+      <img style={{height:150, width:150}}  src={`./images/${poem_data.image_name}`} alt="Poem Illustration" />
       <br></br>
-      <img style={{height:10, width:10}}  src={`./poems/images/${poem_data[currentIndex].image_name}`} alt="" />
+      <img style={{height:10, width:10}}  src={`./poems/images/${poem_data.image_name}`} alt="" />
 
     </div>
   );
@@ -182,7 +183,18 @@ const handleToggle=()=> {setShowBase(!showBase);};
       {data.length > 0 && (
         <div style={{margin:'10px'}}>
           <LanguageChooser setChosenLanguage={setChosenLanguage} setCurrentIndex={setCurrentIndex} />
-          <DisplayPoem poem_data={data} currentIndex={currentIndex} showBase={showBase} chosenLanguage={chosenLanguage} />
+        
+        
+        {/* Map over the data to display each poem */}
+        <div>
+        {data.map((poem, index) => (
+          <React.Fragment key={index}>
+          <DisplayPoem key={index} poem_data={poem} currentIndex={index} showBase={showBase} />
+          </React.Fragment>
+      ))} </div>
+      
+
+          {/*<DisplayPoem poem_data={data} currentIndex={currentIndex} showBase={showBase} chosenLanguage={chosenLanguage} />*/}
           {/* Navigation buttons */}
           <ToggleSwitch handleToggle={handleToggle} showBase={showBase} />
           <NavigationButtons onNext={handleNext} onPrevious={handlePrevious} />
