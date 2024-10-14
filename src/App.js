@@ -79,39 +79,14 @@ const LanguageChooser=({setChosenLanguage,setCurrentIndex})=>{
 }
 
 
-const DisplayPoem = ({ poem_data, currentIndex,showBase }) => {
-  //const poem=poem_data[currentIndex];
-  return (
-    <div>
-      {/*<h1 style={{color:'blue',fontSize:'16px' }}>{poem_data.key_words}</h1> */}
-      
-
-      <p style={{margin:0, padding:0}}>{poem_data.target_line1}</p>
-      <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
-        {showBase ? poem_data[currentIndex].base_line1 :'.'}</p>
-       
-      <p style={{margin:0, padding:0}}>{poem_data.target_line2}</p>
-      <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
-        {showBase ? poem_data[currentIndex].base_line2 :'.'}</p>
-      
-      
-      <p style={{margin:0, padding:0}}>{poem_data.target_line3}</p>
-      <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
-      {showBase ? poem_data[currentIndex].base_line3 :'.'}</p>
-      <p style={{margin:0, padding:0}}>{poem_data.target_line4}</p>
-      <p style={{color: showBase ? 'grey':'white', margin:0, padding:0}}>
-      {showBase ? poem_data.base_line4 :'.'}</p>
-      <br style={{height:'3px'}}></br>
-      <img style={{height:150, width:150}}  src={`./images/${poem_data.image_name}`} alt="Poem Illustration" />
-      <br></br>
-      <img style={{height:10, width:10}}  src={`./poems/images/${poem_data.image_name}`} alt="" />
-
-    </div>
-  );
-};
-
-
+const DisplayPoem = ({ poem_data, currentIndex}) => {
 //Add a toggle to hide the english
+
+//Decide to show the base language
+const [showBase, setShowBase] = useState(false);
+const handleToggle=()=> {setShowBase(!showBase);};
+
+
 const ToggleSwitch=({handleToggle, showBase})=>{
   return (
     <div style={{margin:'5px'}}>
@@ -124,6 +99,44 @@ const ToggleSwitch=({handleToggle, showBase})=>{
       </div>
   );
 };
+
+
+
+  //const poem=poem_data[currentIndex];
+  return (
+    <div>
+      {/*<h1 style={{color:'blue',fontSize:'16px' }}>{poem_data.key_words}</h1> */}
+      
+
+      <p style={{margin:0, padding:0}}>{poem_data.target_line1}</p>
+      <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
+        {showBase ? poem_data.base_line1 :'.'}</p>
+       
+      <p style={{margin:0, padding:0}}>{poem_data.target_line2}</p>
+      <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
+        {showBase ? poem_data.base_line2 :'.'}</p>
+      
+      
+      <p style={{margin:0, padding:0}}>{poem_data.target_line3}</p>
+      <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
+      {showBase ? poem_data.base_line3 :'.'}</p>
+      
+      <p style={{margin:0, padding:0}}>{poem_data.target_line4}</p>
+      <p style={{color: showBase ? 'grey':'white', margin:0, padding:0}}>
+      {showBase ? poem_data.base_line4 :'.'}</p>
+      <ToggleSwitch handleToggle={handleToggle} showBase={showBase} />
+      <br style={{height:'3px'}}></br>
+      <img style={{height:150, width:150}}  src={`./images/${poem_data.image_name}`} alt="Poem Illustration" />
+      <br></br>
+      <img style={{height:10, width:10}}  src={`./poems/images/${poem_data.image_name}`} alt="" />
+      <hr style={{backgroundColor:'SkyBlue', border: 'none', height: '2px', marginLeft: 0, width: '200px',}} />
+      
+ 
+    </div>
+  );
+};
+
+
 
 
 // NavigationButtons component with Next and Previous buttons
@@ -147,21 +160,18 @@ function App() {
 const [chosenLanguage, setChosenLanguage] = useState('German');
 
 
-//Decide to show the base language
-const [showBase, setShowBase] = useState(false);
-const handleToggle=()=> {setShowBase(!showBase);};
 
 
   // Functions to handle next and previous buttons
   const handleNext = () => {
-    setShowBase(false);
+    //setShowBase(false);
     if (currentIndex < data.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   };
 
   const handlePrevious = () => {
-    setShowBase(false);
+    //setShowBase(false);
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     }
@@ -189,14 +199,13 @@ const handleToggle=()=> {setShowBase(!showBase);};
         <div>
         {data.map((poem, index) => (
           <React.Fragment key={index}>
-          <DisplayPoem key={index} poem_data={poem} currentIndex={index} showBase={showBase} />
+          <DisplayPoem key={index} poem_data={poem} currentIndex={index}  />
           </React.Fragment>
       ))} </div>
       
 
           {/*<DisplayPoem poem_data={data} currentIndex={currentIndex} showBase={showBase} chosenLanguage={chosenLanguage} />*/}
           {/* Navigation buttons */}
-          <ToggleSwitch handleToggle={handleToggle} showBase={showBase} />
           <NavigationButtons onNext={handleNext} onPrevious={handlePrevious} />
     
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6BFc00n1gch93HZzOI5WN4LjfIw4lrOaMZmGFYfEYWND4Ug/viewform?usp=sf_link" alt="">Share a poem or leave feedback</a>
