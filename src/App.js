@@ -54,7 +54,7 @@ const LoadLocalData = ({ setData, chosenLanguage }) => {
 };
 
 const LanguageChooser=({setChosenLanguage,setCurrentIndex})=>{
-  const [selectedLanguage,setSelectedLanguage]=useState('German');
+  const [selectedLanguage,setSelectedLanguage]=useState('Spanish');
   const handleLanguageChange=(event)=>{
     setSelectedLanguage(event.target.value);
     setChosenLanguage(event.target.value);
@@ -70,8 +70,8 @@ const LanguageChooser=({setChosenLanguage,setCurrentIndex})=>{
     onChange={handleLanguageChange}
     style={{ width: '100px', padding: '4px', fontSize: '12px' }}
     >
-    <option value="German">German</option>
     <option value="Spanish">Spanish</option>
+    <option value="German">German</option>
     </select>
     </div>
 
@@ -104,10 +104,24 @@ const ToggleSwitch=({handleToggle, showBase})=>{
 
   //const poem=poem_data[currentIndex];
   return (
-    <div>
+    <div
+        style={{
+          scrollSnapType: 'y mandatory',
+          overflowY: 'visible',
+          WebkitOverflowScrolling: 'touch'
+        }}
+      >
       {/*<h1 style={{color:'blue',fontSize:'16px' }}>{poem_data.key_words}</h1> */}
       
-
+      <div
+        style={{
+          scrollSnapAlign: 'start',
+          padding: '20px', // Optional: add padding for visual separation
+         display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start', // Align content at the top
+        }}
+      >
       <p style={{margin:0, padding:0}}>{poem_data.target_line1}</p>
       <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
         {showBase ? poem_data.base_line1 :'.'}</p>
@@ -130,8 +144,7 @@ const ToggleSwitch=({handleToggle, showBase})=>{
       <br></br>
       <img style={{height:10, width:10}}  src={`./poems/images/${poem_data.image_name}`} alt="" />
       <hr style={{backgroundColor:'SkyBlue', border: 'none', height: '2px', marginLeft: 0, width: '200px',}} />
-      
- 
+      </div> {/* End snap div */}
     </div>
   );
 };
@@ -157,9 +170,7 @@ function App() {
   const [data, setData] = useState([]); // Initially empty
 
 //ChosenLanguage
-const [chosenLanguage, setChosenLanguage] = useState('German');
-
-
+const [chosenLanguage, setChosenLanguage] = useState('Spanish');
 
 
   // Functions to handle next and previous buttons
