@@ -116,7 +116,7 @@ const ToggleSwitch=({handleToggle, showBase})=>{
       <div
         style={{
           scrollSnapAlign: 'start',
-          padding: '20px', // Optional: add padding for visual separation
+          padding: '5px', // Optional: add padding for visual separation
          display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start', // Align content at the top
@@ -124,21 +124,24 @@ const ToggleSwitch=({handleToggle, showBase})=>{
       >
       <p style={{margin:0, padding:0}}>{poem_data.target_line1}</p>
       <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
-        {showBase ? poem_data.base_line1 :'.'}</p>
+        {poem_data.base_line1}</p>
        
       <p style={{margin:0, padding:0}}>{poem_data.target_line2}</p>
       <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
-        {showBase ? poem_data.base_line2 :'.'}</p>
+        {poem_data.base_line2}</p>
       
       
       <p style={{margin:0, padding:0}}>{poem_data.target_line3}</p>
       <p style={{ color: showBase ? 'grey':'white', margin:0, padding:0}}>
-      {showBase ? poem_data.base_line3 :'.'}</p>
+        {poem_data.base_line3}</p>
       
       <p style={{margin:0, padding:0}}>{poem_data.target_line4}</p>
-      <p style={{color: showBase ? 'grey':'white', margin:0, padding:0}}>
-      {showBase ? poem_data.base_line4 :'.'}</p>
+      <p style={{color: showBase ? 'grey':'white',margin:0, marginBottom:'3px', padding:0}}>
+      {poem_data.base_line4}</p>
+      
+
       <ToggleSwitch handleToggle={handleToggle} showBase={showBase} />
+      
       <br style={{height:'3px'}}></br>
       <img style={{height:150, width:150}}  src={`./images/${poem_data.image_name}`} alt="Poem Illustration" />
       <br></br>
@@ -202,7 +205,7 @@ const [chosenLanguage, setChosenLanguage] = useState('Spanish');
     
       {/* Display data if available */}
       {data.length > 0 && (
-        <div style={{margin:'10px'}}>
+        <div style={{margin:'5px'}}>
           <LanguageChooser setChosenLanguage={setChosenLanguage} setCurrentIndex={setCurrentIndex} />
         
         
